@@ -1,7 +1,10 @@
 import { useState } from "react";
 import Pill from "@/components/common/Pill";
+<<<<<<< HEAD
+=======
 import { PROPERTYLISTINGSAMPLE } from "@/constants";
 import Link from "next/link";
+>>>>>>> b560877029514670485d05ac887510730c8de948
 
 
 const filters = [
@@ -15,9 +18,12 @@ const filters = [
 const Home: React.FC =()=>{
 const [activeFilter, setActiveFilter] = useState<string>("");
 
+<<<<<<< HEAD
+=======
 const filteredProperties = activeFilter? 
 PROPERTYLISTINGSAMPLE.filter((property)=>property.category.includes(activeFilter)): PROPERTYLISTINGSAMPLE;
 
+>>>>>>> b560877029514670485d05ac887510730c8de948
   return(
     <div className="mt-8">
       {/* Headline */}
@@ -29,7 +35,7 @@ PROPERTYLISTINGSAMPLE.filter((property)=>property.category.includes(activeFilter
       </h2>
 
       {/* Filter section */}
-      <div className="grid grid-cols-3">
+      <div>
         {filters.map((filter)=>(
           <Pill
           key={filter}
@@ -44,10 +50,12 @@ PROPERTYLISTINGSAMPLE.filter((property)=>property.category.includes(activeFilter
           <span className="font-medium">{activeFilter || "None"} </span>
         </p>
 
+<<<<<<< HEAD
+=======
         {/* Property listing */}
-        <div className="grid grid-cols-3">
+        <div>
           {filteredProperties.map((item)=>(
-            <div key={item.id} className="">
+            <div key={item.id}>
               <img src="" alt="" />
               <h2>{item.name} </h2>
               <p>{item.address.city}- {item.address.country}</p>
@@ -58,8 +66,8 @@ PROPERTYLISTINGSAMPLE.filter((property)=>property.category.includes(activeFilter
           ))}
         </div>
 
+>>>>>>> b560877029514670485d05ac887510730c8de948
       </div>
     </div>
   )
 }
-export default Home;
