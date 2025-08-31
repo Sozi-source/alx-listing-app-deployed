@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-import { PropertyProps } from "@/interfaces";
-
-export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
-    {
-=======
 import { PropertyProps } from "@/interfaces"
 export const PROPERTYLISTINGSAMPLE: PropertyProps []  =  [
   {
->>>>>>> b560877029514670485d05ac887510730c8de948
     id: 1,
     name: "Villa Ocean Breeze",
     address: { state: "Seminyak", city: "Bali", country: "Indonesia" },
@@ -227,8 +220,4 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps []  =  [
     image: "https://example.com/image20.jpg",
     discount: ""
   }
-<<<<<<< HEAD
-];
-=======
 ]
->>>>>>> b560877029514670485d05ac887510730c8de948
