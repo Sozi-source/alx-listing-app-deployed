@@ -1,41 +1,31 @@
+import { PROPERTYLISTINGSAMPLE } from "@/constants/index";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import PropertyDetail from "@/components/property/PropertyDetail";
-import axios from "axios";
+import BookingSection from "@/components/property/BookingSection"
+import ReviewSection from "@/components/property/ReviewSection";
+import { SampleReviews } from "@/constants/reviews";
+import PropertyDetail from "./PropertyDetail";
 
-export default function PropertyDetailPage() {
+export default function PropertyPage() {
   const router = useRouter();
   const { id } = router.query;
-  const [property, setProperty] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const property = PROPERTYLISTINGSAMPLE.find((item) => item.id === Number(id));
 
-  useEffect(() => {
-    const fetchProperty = async () => {
-      if (!id) return;
-      try {
-        const response = await axios.get(`/api/properties/${id}`);
-        setProperty(response.data);
-      } catch (error) {
-        console.error("Error fetching property details:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const reviews = SampleReviews.filter((review)=> review.propertyId===Number(id))
 
-    fetchProperty();
-  }, [id]);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
 
-  if (!property) {
-    return <p>Property not found</p>;
-  }
+  if (!property) return <p>Property not found</p>;
 
-  return(
+  return (
     <div>
-      <PropertyDetail property={property} />;
+      <div>
+        <PropertyDetail property={property} />
+        <ReviewSection reviews={reviews} />
+      </div>
+
+      <div>
+        <BookingSection price={property.price} />
+      </div>
     </div>
-  )
+  );
 }
