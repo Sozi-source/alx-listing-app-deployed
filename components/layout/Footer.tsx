@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-gray-800 text-white px-6 py-10">
@@ -6,7 +8,7 @@ const Footer: React.FC = () => {
         {/* Logo + About (left side, half width) */}
         <div className="w-full md:w-1/2">
           <div className="flex items-center gap-3 mb-4">
-            <img
+            <Image
               src="/assets/images/logo.svg"
               alt="ALX Logo"
               className="invert w-12 h-10"

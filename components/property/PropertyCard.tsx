@@ -1,6 +1,7 @@
 import { propertyprops } from "@/interfaces";
 import Link from "next/link";
-import { Star, Bed, ShowerHead, Users } from "lucide-react";
+import { Star} from "lucide-react";
+import Image from "next/image";
 
 interface props{
 property: propertyprops
@@ -9,7 +10,7 @@ const PropertyCard:React.FC<props>=({property})=>{
 
 return(
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition w-96">
-    <img src={property.image} alt={property.name} className="object-cover hover:scale-105 transition-transform duration-300"/>
+    <Image src={property.image} alt={""} className="object-cover hover:scale-105 transition-transform duration-300"/>
     
     {/* Card content */}
     <div className="p-5 space-y-4">

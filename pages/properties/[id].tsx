@@ -2,7 +2,7 @@ import BookingSection from "@/components/property/BookingSection";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Star, Bed, ShowerHead, Users } from "lucide-react";
+import { Bed, ShowerHead, Users } from "lucide-react";
 import { propertyprops } from "@/interfaces";
 import ReviewSection from "@/components/property/ReviewSection";
 

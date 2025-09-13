@@ -15,7 +15,7 @@ const data = await response.json()
 setProperties(data)
     
 } catch (error) {
-    console.error("An error occured")
+    console.error("An error occured", error)
     
 }finally{
     setLoading(false)

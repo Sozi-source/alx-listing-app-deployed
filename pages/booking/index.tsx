@@ -42,7 +42,7 @@ export default function BookingForm() {
       alert("Booking confirmed!");
       setShowSummary(false);
     } catch (error) {
-      setError("Failed to submit booking.");
+      console.error("An error occured", error)
     } finally {
       setLoading(false);
       setFormData({

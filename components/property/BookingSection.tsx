@@ -1,4 +1,3 @@
-import { BookingDetailsprops } from "@/interfaces";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -48,7 +47,7 @@ const BookingSection: React.FC<BookingSectionProps> = ({ price, discount}) => {
       {/* Reserve button */}
       {checkin && checkout &&(
         <div>
-          <button onClick={(e)=>router.push("/booking")} className="bg-green-500 text-white py-2 px-4 rounded-md mt-3">Reserve now</button>
+          <button onClick={()=>router.push("/booking")} className="bg-green-500 text-white py-2 px-4 rounded-md mt-3">Reserve now</button>
         </div>
       )}
     </div>
