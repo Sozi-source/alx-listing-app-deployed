@@ -1,45 +1,20 @@
-import { useState } from "react";
-import Pill from "@/components/common/Pill";
-
-
-const filters = [
-  "Top Villa",
-  "Self Checkin",
-  "Ocean View",
-  "Pet Friendly",
-  "Countryside",
-];
-
-const Home: React.FC =()=>{
-const [activeFilter, setActiveFilter] = useState<string>("");
-
-  return(
-    <div className="mt-8">
-      {/* Headline */}
-      <h2 className="text-2xl font-bold mb-">Find your favorite place here! <br />
-      <span className="text-lg font-normal">
-        The best prices for over 2 million properties worldwide.
-      </span>
-
-      </h2>
-
-      {/* Filter section */}
+import { useRouter } from "next/router";
+import PropertiesPage from "./properties";
+const Home: React.FC=()=>{
+const router = useRouter()
+  
+return(
+    <div className="m-10 ">
       <div>
-        {filters.map((filter)=>(
-          <Pill
-          key={filter}
-          label={filter}
-          isActive ={activeFilter === filter}
-          onClick={()=>setActiveFilter(filter)} />
-        ))}
-
-        {/* selected filters */}
-        <p className="text-sm text-gray-500">
-          Selected filter:{" "}
-          <span className="font-medium">{activeFilter || "None"} </span>
-        </p>
-
+        <img src="/assets/images/hero.png" alt="" className="w-[1608px] h-[481px] object-cover" />
       </div>
+    
+    <div className="mt-10">
+      <PropertiesPage/>
+    </div>
+
+
     </div>
   )
 }
+export default Home;
