@@ -9,15 +9,17 @@ property: propertyprops
 const PropertyCard:React.FC<props>=({property})=>{
 
 return(
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition w-96">
-    <Image src={property.image} 
-    width={300}
-    height={200}
-    alt={""} 
-    className="object-cover hover:scale-105 transition-transform duration-300"/>
+    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition w-96 border-gray-200 border-2">
+    <div className="w-[300px] h-[200px] overflow-hidden">
+      <Image src={property.image} 
+        width={300}
+        height={200}
+        alt={""} 
+        className="hover:scale-105 transition-transform duration-300"/>
+    </div>
     
     {/* Card content */}
-    <div className="p-5 space-y-4">
+    <div className="p-5 space-y-5">
     <div>
     <h2 className="text-lg font-semibold text-gray-900 truncate">{property.name}</h2>
     <p>{property.address.city}, {property.address.state}, {" "} {property.address.country}  </p>

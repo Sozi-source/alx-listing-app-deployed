@@ -12,6 +12,7 @@ export default function BookingForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string|null>(null);
   const [showsummary, setShowSummary]= useState(false);
+  const [timestamp, setTimestamp]= useState<string|null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -30,14 +31,24 @@ export default function BookingForm() {
   }
 
   if(!showsummary){
+    // timestamp when showing summary
+    setTimestamp(new Date().toLocaleString("en-KE"))
     setShowSummary(true);
     return;
   }
+
+  // bookingdata with timestamp
+const bookingData= {
+  ...formData, 
+  createdAt: new Date().toISOString()
+}
+
+
     // Simulate API call
     setLoading(true);
 
     try {
-      const {data} = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/bookings`, formData);
+      const {data} = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/bookings`, bookingData);
       console.log(data);
       alert("Booking confirmed!");
       setShowSummary(false);
@@ -96,6 +107,7 @@ export default function BookingForm() {
           <p><strong>Name:</strong> {formData.firstName} {formData.lastName}</p>
           <p><strong>Email:</strong> {formData.email}</p>
           <p><strong>Phone:</strong> {formData.phoneNumber}</p>
+          {timestamp && <p><strong>Booked At:</strong> {timestamp}  </p>}
         </div> 
       )}
 

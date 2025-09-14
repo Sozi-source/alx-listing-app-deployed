@@ -28,7 +28,7 @@ const BookingSection: React.FC<BookingSectionProps> = ({ price, discount}) => {
   
 
    return (
-    <div className="bg-white p-6 shadow-md rounded-lg">
+    <div className="bg-white p-6 shadow-md rounded-lg border border-transparent hover:border-blue-400 border-2">
       <h3 className="text-xl font-semibold">KES {price}/night</h3>
       <div className="mt-4">
         <label>Check-in</label>
