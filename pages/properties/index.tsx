@@ -32,7 +32,7 @@ setProperties(data)
 fetchProperties()
 },[])
 
-if(loading)return <p>Properties are now loading...</p>
+if(loading)return <p>Loading...</p>
 if(!properties)return <p>Properties not found</p>
 
     return(

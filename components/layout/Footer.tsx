@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 const Footer: React.FC = () => {
   return (
@@ -27,7 +28,7 @@ const Footer: React.FC = () => {
         <div className="w-full md:w-1/2 flex flex-wrap md:flex-nowrap justify-start md:justify-end gap-12">
           {/* Explore */}
           <div>
-            <h3 className="font-semibold text-lg mb-3">Explore</h3>
+            <Link href={"/properties"}>Explore</Link>
             <ul className="space-y-2 text-gray-300 text-sm">
               <li>Apartments in Dubai</li>
               <li>Villas in Bali</li>
