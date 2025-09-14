@@ -2,14 +2,16 @@ import Image from "next/image";
 const Header: React.FC = () => {
   return (
     <header className="w-full bg-white shadow-md px-6 py-4">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 mt-5">
         
         {/* Logo */}
         <div className="flex items-center gap-3">
           <Image
             src="/assets/images/logo.svg"
             alt="ALX Logo"
-            className="w-20 h-auto invert"
+            width={128}
+            height={128}
+            className="mt-5"
           />
         </div>
 

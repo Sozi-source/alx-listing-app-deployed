@@ -20,7 +20,7 @@ export default function PropertyDetailPage() {
 
      const fetchProperty = async () => {
       try {
-        const response = await fetch(`https://json-server-api-y5tr.onrender.com/properties/${propertyId}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/properties/${propertyId}`);
         if (!response.ok) throw new Error("Failed to fetch property");
         const data = await response.json();
         setProperty(data);

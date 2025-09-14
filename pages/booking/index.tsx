@@ -37,7 +37,7 @@ export default function BookingForm() {
     setLoading(true);
 
     try {
-      const {data} = await axios.post("http://localhost:3001/bookings", formData);
+      const {data} = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/bookings`, formData);
       console.log(data);
       alert("Booking confirmed!");
       setShowSummary(false);

@@ -10,7 +10,11 @@ const PropertyCard:React.FC<props>=({property})=>{
 
 return(
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition w-96">
-    <Image src={property.image} alt={""} className="object-cover hover:scale-105 transition-transform duration-300"/>
+    <Image src={property.image} 
+    width={300}
+    height={200}
+    alt={""} 
+    className="object-cover hover:scale-105 transition-transform duration-300"/>
     
     {/* Card content */}
     <div className="p-5 space-y-4">
