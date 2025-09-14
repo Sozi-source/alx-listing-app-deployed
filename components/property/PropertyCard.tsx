@@ -14,6 +14,7 @@ return(
       <Image src={property.image} 
         width={300}
         height={200}
+        sizes="(max-width: 768px) 100vw, 400px"
         alt={""} 
         className="hover:scale-105 transition-transform duration-300"/>
     </div>
