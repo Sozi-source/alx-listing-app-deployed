@@ -12,6 +12,7 @@ export default function Home() {
         <Image
           src="/assets/images/hero.png"
           alt="Hero"
+          loading="lazy"
           fill
           className="object-cover object-bottom"
         />

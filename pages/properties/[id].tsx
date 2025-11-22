@@ -43,6 +43,7 @@ export default function PropertyDetailPage() {
         <Image
           src={property.image}
           alt={property.name}
+          loading="lazy"
           width={600}
           height={400}
           className="w-full object-cover h-[200px] md:h-[300px] lg:h-[400px] rounded-xl shadow-md hover:shadow-lg transition"
