@@ -1,21 +1,51 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-
+import { useEffect, useState } from "react";
 
 
 export default function Home() {
   const router= useRouter()
+
+  const slides = [
+    "/assets/hero/img1.jpg",
+    "/assets/hero/img2.jpg",
+    "/assets/hero/img3.jpg",
+    "/assets/hero/img4.jpg",
+    "/assets/hero/img5.jpg",
+    "/assets/hero/img6.jpg",
+    "/assets/hero/img7.jpg",
+    "/assets/hero/img8.jpg",
+    "/assets/hero/img9.jpg",
+    "/assets/hero/img10.jpg",
+  ]
+
+  const [current, setCurrent] = useState(0)
+
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+      setCurrent((prev)=> (prev + 1) % slides.length)
+    }, 6000)
+    return ()=> clearInterval(interval)
+  }, [])
+
+
   return (
     <div className="px-5 md:px-10 lg:px-20">
       {/* Hero Section */}
-      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-lg mt-5">
-        <Image
-          src="/assets/images/hero.png"
+      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden mt-5">
+        
+        {slides.map((src, index)=>(
+          <Image
+          key={index}
+          src={src}
           alt="Hero"
-          loading="lazy"
+          loading={index === 0 ? "eager" : "lazy"}
           fill
-          className="object-cover object-bottom"
+          className={`object-cover object-bottom transition-opacity duration-1000 ${index === current ? "opacity-100" : "opacity-0" }`}
+             
         />
+        ))}
+
         {/* Text overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold drop-shadow-lg text-white">
@@ -27,15 +57,16 @@ export default function Home() {
 
              {/* Explore Properties */}
            <button onClick={()=>router.push("/properties")}
-            className="mt-6 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300">Explore Properties</button>
+            className="mt-6 px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg 
+            shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300">Explore Properties</button>
         </div>
       </div>
 
       {/* Additional Information */}
       <div className="mt-16 text-center mb-5">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">Why Choose Us?</h2>
-        <p className="text-gray-700 text-base md:text-lg max-w-2xl mx-auto"> We provide verified listings, easy booking, and 24/7 support to help you find your
-          perfect stay
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-green-500">Why Choose Us?</h2>
+        <p className="text-gray-700 text-base md:text-lg max-w-2xl mx-auto"> Verified listings, effortless booking, 
+          and round-the-clock support make finding your perfect stay simple and stress-free.
         </p>
       </div>
 

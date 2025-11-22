@@ -24,10 +24,10 @@ const Header: React.FC = () => {
 
         {/* Sign up / Sign in buttons */}
         <div className="flex gap-3">
-          <button className="text-sm md:text-base font-medium bg-blue-500 hover:bg-blue-600 text-white rounded-md px-4 py-2 transition">
+          <button className="mt-6 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition duration-300">
             Sign up
           </button>
-          <button className="text-sm md:text-base font-medium bg-blue-500 text-white hover:bg-blue-600 rounded-md px-4 py-2 transition">
+          <button className="mt-6 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition duration-300">
             Sign in
           </button>
         </div>

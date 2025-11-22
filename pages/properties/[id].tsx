@@ -46,12 +46,12 @@ export default function PropertyDetailPage() {
           loading="lazy"
           width={600}
           height={400}
-          className="w-full object-cover h-[200px] md:h-[300px] lg:h-[400px] rounded-xl shadow-md hover:shadow-lg transition"
+          className="w-full object-cover h-[200px] md:h-[300px] lg:h-[400px] rounded-xl hover:shadow-lg transition"
         />
       )}
 
       {/* Card section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-6 rounded-xl shadow-lg border border-blue-300 border-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-6 rounded-xl border border-blue-300 border-2">
         <section className="space-y-4">
         <h2 className="text-2xl font-bold text-gray-900">{property.name}</h2>
         <p className="text-gray-500">
