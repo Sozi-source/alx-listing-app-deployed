@@ -9,7 +9,7 @@ property: propertyprops
 const PropertyCard:React.FC<props>=({property})=>{
 
 return(
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition w-96 border-gray-200 border-2">
+    <div className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition w-96 border-gray-200 border-2">
     <div className="w-[300px] h-[200px] overflow-hidden">
       <Image src={property.image} 
         width={300}
