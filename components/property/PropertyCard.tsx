@@ -2,11 +2,15 @@ import { propertyprops } from "@/interfaces";
 import Link from "next/link";
 import { Star} from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 interface props{
 property: propertyprops
 }
+
+
 const PropertyCard:React.FC<props>=({property})=>{
+    const router = useRouter()
 
 return(
     <div className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition w-96 border-gray-200 border-2">
@@ -16,7 +20,8 @@ return(
         height={200}
         sizes="(max-width: 768px) 100vw, 400px"
         alt={""} 
-        className="hover:scale-105 transition-transform duration-300"/>
+        className="hover:scale-105 transition-transform duration-300"
+        onClick={()=>router.push(`/properties/${property.id}`)}/>
     </div>
     
     {/* Card content */}
