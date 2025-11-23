@@ -9,14 +9,16 @@ export default function Home() {
   const slides = [
     "/assets/hero/1.png",
     "/assets/hero/2.png",
-    "/assets/hero/3.png",
+    "/assets/hero/3.jpg",
     "/assets/hero/4.png",
     "/assets/hero/5.png",
     "/assets/hero/6.png",
     "/assets/hero/7.png",
-    "/assets/hero/8.png",
-    "/assets/hero/9.png",
-    "/assets/hero/10.png",
+    "/assets/hero/8.jpg",
+    "/assets/hero/9.jpg",
+    "/assets/hero/10.jpg",
+    "/assets/hero/11.jpg",
+    "/assets/hero/12.jpg",
   ]
 
   const [current, setCurrent] = useState(0)
