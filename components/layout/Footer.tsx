@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+
+
 const Footer: React.FC = () => {
+  const router = useRouter()
   return (
     <footer className="w-full bg-gray-500 text-white px-6 py-10">
       {/* Top section */}
@@ -12,7 +16,8 @@ const Footer: React.FC = () => {
             alt="logo"
             width={80}
             height={80}
-            className=""/>
+            className=""
+            onClick={()=>router.push("/")}/>
            
           </div>
           <p className="text-sm leading-relaxed text-gray-300 md:w-[90%]">

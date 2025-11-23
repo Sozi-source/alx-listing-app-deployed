@@ -7,16 +7,16 @@ export default function Home() {
   const router= useRouter()
 
   const slides = [
-    "/assets/hero/img1.jpg",
-    "/assets/hero/img2.jpg",
-    "/assets/hero/img3.jpg",
-    "/assets/hero/img4.jpg",
-    "/assets/hero/img5.jpg",
-    "/assets/hero/img6.jpg",
-    "/assets/hero/img7.jpg",
-    "/assets/hero/img8.jpg",
-    "/assets/hero/img9.jpg",
-    "/assets/hero/img10.jpg",
+    "/assets/hero/1.png",
+    "/assets/hero/2.png",
+    "/assets/hero/3.png",
+    "/assets/hero/4.png",
+    "/assets/hero/5.png",
+    "/assets/hero/6.png",
+    "/assets/hero/7.png",
+    "/assets/hero/8.png",
+    "/assets/hero/9.png",
+    "/assets/hero/10.png",
   ]
 
   const [current, setCurrent] = useState(0)
