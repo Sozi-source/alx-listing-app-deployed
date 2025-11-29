@@ -24,10 +24,12 @@ const Header: React.FC = () => {
 
         {/* Sign up / Sign in buttons */}
         <div className="flex gap-3">
-          <button className="mt-6 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <button className="mt-6 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          onClick={()=>router.push("/auth/signup")}>
             Sign up
           </button>
-          <button className="mt-6 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <button className="mt-6 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          onClick={()=>router.push("/auth/signin")}>
             Sign in
           </button>
         </div>
