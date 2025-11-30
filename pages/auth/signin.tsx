@@ -10,7 +10,7 @@ const {signin} = useAuth();
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 
-const handleSubmit =async(e:any)=>{
+const handleSubmit =async(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     await signin(email, password)
     alert("User signed-in successfully")
