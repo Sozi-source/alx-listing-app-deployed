@@ -9,16 +9,13 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [
+export default [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 
-  // Add custom rule overrides:
   {
     rules: {
-      "@typescript-eslint/no-explicit-any": "off",
-      "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-explicit-any": "off", // disables the 'any' error
+      "react-hooks/exhaustive-deps": "off",       // optional
     },
   },
 ];
-
-export default eslintConfig;
