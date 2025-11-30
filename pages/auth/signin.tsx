@@ -22,9 +22,6 @@ const handleSubmit =async(e:React.FormEvent<HTMLFormElement>)=>{
             <form onSubmit={handleSubmit}
             className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md space-y-2">
 
-            <h1 className="text-2xl font-semibold text-center text-gray-800"
-            >Sign-In</h1>
-
             <input type="email" 
             placeholder="Email" 
             value={email} 
