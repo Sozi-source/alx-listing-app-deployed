@@ -1,5 +1,6 @@
 import { useAuth } from "@/context/authContext";
 import { useState } from "react";
+import Signup from "./signup";
 
 
 
@@ -17,8 +18,9 @@ const handleSubmit =async(e:any)=>{
     setPassword("");
 }
     return(
-        <form onSubmit={handleSubmit}
-        className="max-w-md mx-auto mt-12 p-6 bg-white shadow-md rounded-md space-y-4">
+        <div>
+            <form onSubmit={handleSubmit}
+            className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md space-y-2">
 
             <h1 className="text-2xl font-semibold text-center text-gray-800"
             >Sign-In</h1>
@@ -40,5 +42,6 @@ const handleSubmit =async(e:any)=>{
             >Sign-In
             </button>
         </form>
+        </div>
     )
 }

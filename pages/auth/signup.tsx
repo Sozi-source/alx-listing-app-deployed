@@ -18,10 +18,7 @@ const handleSubmit =async(e:any)=>{
 }
     return(
         <form onSubmit={handleSubmit}
-        className="max-w-md mx-auto mt-12 p-6 bg-white shadow-md rounded-md space-y-4">
-
-            <h1 className="text-2xl font-semibold text-center text-gray-800"
-            >Sign-Up</h1>
+        className="max-w-md mx-auto p-6 bg-white shadow-md rounded-md space-y-4">
 
             <input type="email" 
             placeholder="Email" 
