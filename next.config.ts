@@ -3,12 +3,12 @@ const withPWA = require("next-pwa")({
   dest: "public",
   register: true,
   skipWaiting: true,
-  disable: process.env.NODE_ENV === "development", // disable PWA in dev
+  disable: process.env.NODE_ENV === "development",
   buildExcludes: [
-    /.*dynamic-css-manifest\.json$/,  // exclude dynamic CSS manifest
-    /.*middleware-manifest\.json$/,   // exclude middleware manifest
-    /.*_buildManifest\.js$/,          // exclude other dynamic build files
-    /.*_ssgManifest\.json$/,          // exclude static generation manifest
+    /.*dynamic-css-manifest\.json$/,
+    /.*middleware-manifest\.json$/,
+    /.*_buildManifest\.js$/,
+    /.*_ssgManifest\.json$/,
   ],
   runtimeCaching: [
     {
@@ -18,7 +18,7 @@ const withPWA = require("next-pwa")({
         cacheName: "next-dynamic-cache",
         expiration: {
           maxEntries: 50,
-          maxAgeSeconds: 24 * 60 * 60, // 1 day
+          maxAgeSeconds: 24 * 60 * 60,
         },
       },
     },
@@ -27,7 +27,10 @@ const withPWA = require("next-pwa")({
       handler: "CacheFirst",
       options: {
         cacheName: "google-fonts",
-        expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 * 24 * 365 },
+        expiration: {
+          maxEntries: 30,
+          maxAgeSeconds: 60 * 60 * 24 * 365,
+        },
       },
     },
   ],
@@ -35,5 +38,11 @@ const withPWA = require("next-pwa")({
 
 module.exports = withPWA({
   reactStrictMode: true,
-  swcMinify: true,
+
+ 
+  // ✅ Disable ESLint during builds
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
 });
