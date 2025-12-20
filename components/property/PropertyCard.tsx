@@ -19,9 +19,11 @@ return(
         width={300}
         height={200}
         sizes="(max-width: 768px) 100vw, 400px"
-        alt={""} 
+        alt={property.name} 
         className="hover:scale-105 transition-transform duration-300"
-        onClick={()=>router.push(`/properties/${property.id}`)}/>
+        onClick={()=>router.push(`/properties/${property.id}`)}
+        placeholder="blur"
+        loading="lazy"/>
     </div>
     
     {/* Card content */}

@@ -17,7 +17,7 @@ useEffect(()=>{
 const fetchProperties=async()=>{
 
 try {
-const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/properties`)
+const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/properties?page=${page}&limit=${perPage}`)
 const data = await response.json()
 setProperties(data)
     
@@ -30,7 +30,7 @@ setProperties(data)
 
 }
 fetchProperties()
-},[])
+},[page])
 
 if(loading)return <p className="m-5">Loading...</p>
 if(!properties)return <p>Properties not found</p>
